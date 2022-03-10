@@ -3,23 +3,16 @@ import ready from "./listeners/ready";
 import interactionCreate from "./listeners/interactionCreate";
 require("dotenv").config();
 
-const path = require('path')
-const express = require('express');
+// const path = require('path')
+import express from "express";
+
 const app = express();
-//const port = process.env.PORT || 3000;
-const http = require("http");
-const server = require("server");
 
 app.listen(process.env.PORT || 3000);
 
-// const host = 'localhost';
-// const port = 8000;
-
-// http.createServer(Request).listen(process.env.PORT || 3000);
-// server.listen(port, host, () => {
-//     console.log(`Server is running on http://${host}:${port}`);
-// });
-
+app.get('/', (req, res) => {
+    res.send('Bot activé')
+});
 
 const botToken = process.env.botToken;
 
