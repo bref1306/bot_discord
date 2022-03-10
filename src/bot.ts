@@ -6,32 +6,24 @@ require("dotenv").config();
 const path = require('path')
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 3000;
+//const port = process.env.PORT || 3000;
+const http = require("http");
+const server = require("server");
 
-// app.listen(process.env.PORT || 3000);
-app.get('/index.html').listen(app.get('port'), function() {
-        console.log('App is running, server is listening on port ', app.get('port'));
-    });
 
-app.listen(port, () => {
-    console.log('App running on port: ' + port);
-  });
-//app.use(express.static(path.join(process.cwd, 'src'))); // ajouter un middleware 
-// à la place de __dirname on peut mettre process.cwd --> chemin depuis lequel on a exécuté le fichier point d'entrée (chemin terminal))
 
-//For avoidong Heroku $PORT error
-// app.get('/', function(request, response) {
-//     var result = 'App is running'
-//     response.send(result);
-// }).listen(app.get('port'), function() {
-//     console.log('App is running, server is listening on port ', app.get('port'));
-// });
 
-// app.listen(port, () => {
-//     console.log('App running on port: ' + port);
-//   });
+//app.listen(process.env.PORT || 3000);
 
-// http.createServer(Request).listen(process.env.PORT || 6000);
+const host = 'localhost';
+const port = 8000;
+
+http.createServer(Request).listen(process.env.PORT || 3000);
+server.listen(port, host, () => {
+    console.log(`Server is running on http://${host}:${port}`);
+});
+
+
 const botToken = process.env.botToken;
 
 const client = new Client({
