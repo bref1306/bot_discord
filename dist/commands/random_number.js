@@ -16,7 +16,7 @@ exports.Random = {
             name: 'maximum',
             description: 'Insérer un nombre maximum',
             type: 'NUMBER',
-            required: false,
+            required: true,
         },
     ],
     run: async (client, interaction) => {

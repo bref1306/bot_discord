@@ -16,7 +16,7 @@ export const Random: Command = {
             name: 'maximum',
             description: 'Insérer un nombre maximum',
             type: 'NUMBER',
-            required: false,
+            required: true,
         },
 
     ],
