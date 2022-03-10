@@ -16,7 +16,7 @@ const handleSlashCommand = async (client: Client, interaction: BaseCommandIntera
         return;
     }
 
-    await interaction.deferReply();
+    await interaction.reply('Ca fonctionne');
 
     slashCommand.run(client, interaction);
 };
