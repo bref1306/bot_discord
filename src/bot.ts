@@ -3,7 +3,8 @@ import ready from "./listeners/ready";
 import interactionCreate from "./listeners/interactionCreate";
 
 
-const token = "OTUxMzk1MjY2NDcxMjc2NTc0.Yim14w.8APBK89MhVZ6XocbALwZZGhs0F8";
+const token = "OTUxMzk1MjY2NDcxMjc2NTc0.Yim14w.sYaRvRuxU-rNYcOYNOceUVJWoHk";
+const botToken = process.env.botToken;
 console.log("Bot is starting...");
 
 const client = new Client({

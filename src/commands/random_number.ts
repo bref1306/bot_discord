@@ -24,8 +24,8 @@ export const Random: Command = {
         let min = await interaction.options.get('minimum')?.value;
         let max = await interaction.options.get('maximum')?.value;
         
-        let random_number = Math.floor(Math.random() * (max? - min! + 1));
-        random_number += min?;
+        // let random_number = Math.floor(Math.random() * (max? - min! + 1));
+        // random_number += min?;
         
         const content = "Le nombre est" + min;
 
