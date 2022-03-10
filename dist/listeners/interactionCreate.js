@@ -14,6 +14,6 @@ const handleSlashCommand = async (client, interaction) => {
         interaction.followUp({ content: "An error has occurred" });
         return;
     }
-    await interaction.reply('Ca fonctionne');
+    await interaction.reply('Réponse de BREF');
     slashCommand.run(client, interaction);
 };
