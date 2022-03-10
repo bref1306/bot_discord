@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu Pendu</title>
+</head>
+<body>
+    <button type="submit" onclick="getSecretWord()">Commencer le jeu</button>
+        <table>
+            <tr id="secretWordPlace"></tr>
+        </table>
+    <button onclick="tryLetter()">Essayer</button>
+    
+</body>
+<script>
+    let words = [ "scolaire", "primaire"," obéissant", "paresseux", "bavarder", "enseigner", "résoudre", "corriger", "réciter", "attentivement", "distrait", "sérieux", "absent", "diviser", "interroger"];
+    let rand = Math.floor(Math.random()*words.length);
+    let secretWord = words[rand];
+    let lettersSecretWord = new Array();
+    var lettresTrouvees=0;
+    let wordLength = secretWord.length;
+    console.log(wordLength);
+    for(var i=0; i<wordLength; i++) lettersSecretWord[i]=document.getElementById(i);
+    console.log(lettersSecretWord);
+        
+    function getSecretWord(){
+        let secretWordPlace = document.getElementById("secretWordPlace");
+        for(i=0; i < wordLength; i++) {
+            secretWordPlace.innerHTML += ("<td><p id=\""+i+"\"> "+secretWord.charAt(i)+"</p></td>");
+            console.log(secretWord.charAt(i));
+        };
+        
+    }
+
+    function tryLetter(){
+        let chosenLetter = 'e';
+        for(var i=0; i < wordLength; i++) {
+            lettersSecretWord[i] = document.getElementById(i);
+            if(lettersSecretWord[i].innerHTML == chosenLetter) {
+                console.log('YEEEES')
+            } else {
+                console.log('marche pas')
+            }
+        };
+
+       /* lettersSecretWord.forEach((item, index) => {
+            if(item.innerHTML == chosenLetter) {
+                console.log('YEEEES')
+                lettresTrouvees++
+            } 
+          })*/
+       
+        
+       
+    }
+</script>
+</html>
