@@ -27,7 +27,7 @@ export const Random: Command = {
         // let random_number = Math.floor(Math.random() * (max? - min! + 1));
         // random_number += min?;
         
-        const content = "Le nombre est" + min;
+        const content = "Le nombre est " + min;
 
         await interaction.followUp({   
             ephemeral: true,

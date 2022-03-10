@@ -2,6 +2,7 @@ import { Client } from "discord.js";
 import { Commands } from "../commands";
 
 export default (client: Client): void => {
+    console.log('Bot is starting...');
     client.on("ready", async () => {
         if (!client.user || !client.application) {
             return;

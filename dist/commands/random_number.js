@@ -22,7 +22,7 @@ exports.Random = {
     run: async (client, interaction) => {
         let min = await interaction.options.get('minimum')?.value;
         let max = await interaction.options.get('maximum')?.value;
-        const content = "Le nombre est" + min;
+        const content = "Le nombre est " + min;
         await interaction.followUp({
             ephemeral: true,
             content,

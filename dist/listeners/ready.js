@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const commands_1 = require("../commands");
 exports.default = (client) => {
+    console.log('Bot is starting...');
     client.on("ready", async () => {
         if (!client.user || !client.application) {
             return;
