@@ -10,18 +10,15 @@ const app = express();
 const http = require("http");
 const server = require("server");
 
+app.listen(process.env.PORT || 3000);
 
+// const host = 'localhost';
+// const port = 8000;
 
-
-//app.listen(process.env.PORT || 3000);
-
-const host = 'localhost';
-const port = 8000;
-
-http.createServer(Request).listen(process.env.PORT || 3000);
-server.listen(port, host, () => {
-    console.log(`Server is running on http://${host}:${port}`);
-});
+// http.createServer(Request).listen(process.env.PORT || 3000);
+// server.listen(port, host, () => {
+//     console.log(`Server is running on http://${host}:${port}`);
+// });
 
 
 const botToken = process.env.botToken;
