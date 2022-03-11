@@ -1,18 +1,19 @@
 import { Client, ClientOptions } from "discord.js";
 import ready from "./listeners/ready";
 import interactionCreate from "./listeners/interactionCreate";
+//import interactionMessage from "./listeners/interactionMessage";
 require("dotenv").config();
 
 // const path = require('path')
-import express from "express";
+// import express from "express";
 
-const app = express();
+// const app = express();
 
-app.listen(process.env.PORT || 3000);
+// app.listen(process.env.PORT || 3000);
 
-app.get('/', (req, res) => {
-    res.send('Bot activé')
-});
+// app.get('/', (req, res) => {
+//     res.send('Bot activé')
+// });
 
 const botToken = process.env.botToken;
 

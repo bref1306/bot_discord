@@ -6,11 +6,11 @@ export const Hello: Command = {
     description: "Vous répond bonjour",
     type: "CHAT_INPUT",
     run: async (client: Client, interaction: BaseCommandInteraction) => {
-        const content = "Hello there!";
+        const content = interaction.client.user?.username + " , enchanté !";
 
         await interaction.followUp({
             ephemeral: true,
-            content
+            content,
         });
     }
 };
