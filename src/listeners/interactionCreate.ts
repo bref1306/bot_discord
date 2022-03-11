@@ -1,4 +1,4 @@
-import { BaseCommandInteraction, Client, Interaction } from "discord.js";
+import { BaseCommandInteraction, Client, Interaction, MessageEmbed } from "discord.js";
 import { Commands } from "../commands";
 
 export default (client: Client): void => {
@@ -6,6 +6,7 @@ export default (client: Client): void => {
         if (interaction.isCommand() || interaction.isContextMenu()) {
             await handleSlashCommand(client, interaction);
         }
+        
     });
 };
 
