@@ -6,13 +6,13 @@ const discord_js_1 = require("discord.js");
 const node_fetch_1 = tslib_1.__importDefault(require("node-fetch"));
 require("dotenv").config();
 exports.ShowButton = {
-    name: "button",
-    description: "Vous renvoie un bouton",
+    name: "search",
+    description: "Chercher une vidéo youtube aléatoirement",
     type: "CHAT_INPUT",
     options: [
         {
-            name: "mot",
-            description: "Met juste un mot random",
+            name: "mot-clef",
+            description: "Insère un mot clef pour avoir une vidéo random",
             type: 'STRING',
             required: true,
         }
@@ -27,20 +27,15 @@ exports.ShowButton = {
             .setStyle('SECONDARY')
             .setEmoji('😄'));
         await interaction.followUp({ ephemeral: true, content, components: [row] });
-        if (process.env.apiKey) {
-            console.log('API connecté');
-        }
         client.on("interactionCreate", async (interaction) => {
             if (interaction.isButton()) {
                 const url = 'https://www.googleapis.com/youtube/v3/search?key=' + process.env.apiKey + '&type=video&part=snippet&q=' + query;
                 const response = await (0, node_fetch_1.default)(url);
                 const data = await response.json();
-                const idVideo = JSON.stringify(data.items[0]['id']['videoId']);
-                const title = JSON.stringify(data.items[0]['snippet']['title']);
-                const description = JSON.stringify(data.items[0]['snippet']['description']);
-                const channel = JSON.stringify(data.items[0]['snippet']['channelTitle']);
-                const image = JSON.stringify(data.items[0]['snippet']['thumbnails']['medium']);
-                console.log(data.items[0]);
+                const idVideo = data.items[0]['id']['videoId'];
+                const title = data.items[0]['snippet']['title'];
+                const description = data.items[0]['snippet']['description'];
+                const channel = data.items[0]['snippet']['channelTitle'];
                 const embed = new discord_js_1.MessageEmbed()
                     .setColor('#8F3B3A')
                     .setTitle(title + ' de ' + channel)
